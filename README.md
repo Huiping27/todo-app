@@ -6,7 +6,7 @@ The App was deployed with Netlify.
 
 The App Link is:https://dancing-kashata-3faf5d.netlify.app/
 
-//////
+/////////////////////////////////////////////////////////////////////////////////
 # Getting Started with Create React App
 
 ## Available Scripts
