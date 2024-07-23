@@ -23,3 +23,5 @@ The App Link is:https://dancing-kashata-3faf5d.netlify.app/
 ### Author
 Huiping Li
 
+## License
+This project is under the MIT license.
