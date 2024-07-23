@@ -1,4 +1,5 @@
-![Screenshot 2024-07-21 at 23 37 02](https://github.com/user-attachments/assets/7c24373f-6eb9-4850-b2ac-34651dedd626)
+
+<img width="796" alt="Screenshot 2024-07-23 at 08 52 01" src="https://github.com/user-attachments/assets/fb5117dd-05e2-47a6-a5fd-d92a21af9427">
 
 # To-Do List App
 
