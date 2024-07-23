@@ -1,9 +1,4 @@
 ![Screenshot 2024-07-21 at 23 37 02](https://github.com/user-attachments/assets/7c24373f-6eb9-4850-b2ac-34651dedd626)
-## Deployment
-The App was deployed with Netlify.
-
-The App Link is:https://dancing-kashata-3faf5d.netlify.app/
-
 
 # To-Do List App
 
