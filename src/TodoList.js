@@ -1,36 +1,52 @@
 import React, { useState } from 'react';
 import './TodoList.css'; // Create this file for styling
-import { Task, addTask, getTask, completeTask, getTasksByCategory, getTasksByPriority } from './todoFunctions'; // Adjust path as needed
 
-// ... the rest of your component code
+const TodoList = () => {
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
 
-const handleAddTask = () => {
-  // ... (existing logic)
-  addTask(newTask, "normal", "general"); // Add default priority and category
+  const handleChange = (e) => {
+    setNewTask(e.target.value);
+  };
+
+  const handleAddTask = () => {
+    if (newTask.trim() !== '') {
+      const task = {
+        id: new Date().getTime(),
+        text: newTask,
+      };
+      setTasks([task, ...tasks]); // Prepend new task to tasks array
+      setNewTask('');
+    }
+  };
+
+  const handleDeleteTask = (id) => {
+    const updatedTasks = tasks.filter(task => task.id !== id);
+    setTasks(updatedTasks);
+  };
+
+  return (
+    <div className="todo-list">
+      <h1>To-Do List</h1>
+      <div className="task-input">
+        <input
+          type="text"
+          placeholder="Enter a task"
+          value={newTask}
+          onChange={handleChange}
+        />
+        <button onClick={handleAddTask}>Add Task</button>
+      </div>
+      <ul className="tasks">
+        {tasks.map(task => (
+          <li key={task.id}>
+            {task.text}
+            <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
-const handleMarkComplete = (id) => {
-  const taskIndex = tasks.findIndex(task => task.id === id);
-  if (taskIndex !== -1) {
-    completeTask(taskIndex);
-    setTasks([...tasks]); // Update state to reflect completion (may need visual update)
-  }
-};
-
-const handleFilterByCategory = (category) => {
-  // Implement logic to display tasks based on category using getTasksByCategory
-  const filteredTasks = getTasksByCategory(tasks, category);
-  // Update UI to display filtered tasks (consider temporary state or visual filtering)
-};
-
-const handleFilterByPriority = (priority) => {
-  // Implement logic to display tasks based on priority using getTasksByPriority
-  const filteredTasks = getTasksByPriority(tasks, priority);
-  // Update UI to display filtered tasks (consider temporary state or visual filtering)
-};
-
-
-
-
-
-
+export default TodoList;
